@@ -1,0 +1,1 @@
+Run node server.js to spin up the express server to serve index.html
