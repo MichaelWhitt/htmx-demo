@@ -1,0 +1,44 @@
+<DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8" />
+      <title>HTMX</title>
+      <script src="https://unpkg.com/htmx.org@1.9.6" integrity="sha384-FhXw7b6AlE/jyjlZH5iHa/tTe9EpJ1Y55RjcgPbjeWMskSxZt1v9qkxLJWNJaGni" crossorigin="anonymous"></script>
+      
+  </head>
+  <body style="background: black; color: rgb(158, 151, 255); font-size: 2rem;">
+    <style>
+      .smooth {
+        transition: all 1s ease-in
+      }
+      #spin {
+        display: none;
+      }
+    </style>
+
+    <!-- hx-trigger="click[ctrlKey]" -->
+    <!-- hx-trigger="every 5s" -->
+    <!--hx-trigger='mouseenter once'-->
+    <!-- hx-trigger="load" -->
+    <!-- hx-confirm="Are you sure?"-->
+    <!--what does hx-boost do-->
+    <h1 style="text-align: center;">Let's Talk About HTMX</h1>
+    <button hx-get="/partial1" hx-target="#content">
+      Load Partial
+    </button>
+    <div id="content">
+      <!-- Content loaded via htmx will be placed here -->
+      <span>Let's talk about HTMX</span>
+    </div>
+
+    <button hx-get="https://html-mock.fly.dev/tag/table" id="dm">Replace me with table from html server</button>
+
+    <button hx-delete="/delete" hx-target="#dm">Delete table from UI</button>
+
+
+    <script src="https://unpkg.com/htmx.org/dist/htmx.js"></script>
+    <script>
+      const fn = () => console.log('hello')
+    </script>
+  </body>
+  </html>
