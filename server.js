@@ -16,10 +16,23 @@ app.delete('/delete', (req, res) => {
     res.status(200).send()
 })
 
-app.get('/partial1', (req, res) => {
-  console.log(req, res)
-  res.status(200).send('very cool')
-})
+// app.get('/slides/1', (req, res) => {
+//   res.status(200).send('/slides/1')
+// })
+
+let num = 0
+app.get("/slides", (req, res) => {
+  const v = Number(req.query.v)
+  console.log(num, v)
+  if (num <= 1 && v === -1) {
+    num = 0
+    res.sendFile(__dirname+`/public/slides/intro.html`);
+  } else {
+    console.log('here')
+    num += v
+    res.sendFile(__dirname+`/public/slides/${num}.html`);
+  } 
+ });
 
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
