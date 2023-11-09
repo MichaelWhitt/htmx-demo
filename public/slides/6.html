@@ -2,12 +2,29 @@
   <div style="text-align: left; font-size: 20px; margin-bottom: 50px; margin-left: -40px">
     Target + Swap Demo
   </div>
-  <div style="display: flex; justify-content: space-evenly; margin-top: 100px;">
+  <div class="grid grid-cols-3 mt-[500px] gap-5">
 
     <!-- innerHTML SWAP -->
     <div style="display: flex; gap: 10px; flex-direction: column;">
-      <button class="btn" hx-get="/name" hx-target="#nameContent">Get Name</button>
-      <div id='nameContent' class="content">Replace inner html of this element</div>
+      <div class="flex gap-5">
+        <button class="btn" hx-get="/name" hx-target="#nameContent">Get Name</button>
+        <button class="btn" hx-delete="/name" hx-target="#nameContent" hx-swap="outerHTML">Delete Name</button>
+      </div>
+      <div id='nameContent' class="content w-full">Replace inner html of this element</div>
+    </div>
+
+
+
+    <!-- Delete Name + Async-->
+    <div style="display: flex; flex-direction: column; gap: 10px;">
+      <div class="flex gap-5">
+
+        <button class="btn" hx-get="/loader" hx-indicator="#indicator" hx-target="#indicator" hx-swap="outerHTML">Load</button>
+      </div>
+      
+      <div id="load" class="w-full h-[50px] content flex justify-center items-center">
+        <img class="htmx-indicator ease-in-out" id="indicator" src="/assets/bars.svg" />
+      </div>
     </div>
 
     <!-- outerHTML SWAP -->
@@ -15,5 +32,6 @@
       <button class="btn" hx-get="/kiba" hx-target="#kibaContent" hx-swap="outerHTML">Get Kiba</button>
       <div id='kibaContent' class="content">Replace entire element with Kiba</div>
     </div>
+
   </div>
 </div>
