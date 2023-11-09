@@ -1,3 +1,41 @@
+.smooth {
+  transition: all 1s ease-in
+}
+#spin {
+  display: none;
+}
 main {
-  background: blue
+  background: rgb(22, 22, 77);
+  height: 82vh;
+  color: #fff;
+  padding: 5px;
+  margin: 10px;
+  font-size: 26px;
+}
+h1 {
+  margin: 0
+}
+.btn {
+  height: 40px;
+  width: fit-content;
+  border-radius: 10px;
+  background: rgb(40, 40, 139);
+  color: white;
+  cursor: pointer;
+  transition: filter ease-in-out 0.3s;
+  outline: none;
+  border: none;
+  font-size: 20px;
+  padding: 5px;
+}
+.btn:hover {
+  filter: brightness(220%);
+}
+
+.content {
+  width: fit-content;
+  padding: 10px;
+  border: 2px solid cyan;
+  border-radius: 10px;
+  height: fit-content;
 }

@@ -1,3 +1,19 @@
-<div>
-  Hello 1
+<div style="padding: 0px 45px 45px 45px;">
+  <div style="text-align: left; font-size: 20px; margin-bottom: 50px; margin-left: -40px">
+    Motivation for HTMX
+  </div>
+  <ul style="display: flex; flex-direction: column; gap: 15px" class="list-disc">
+    <li>HTML only offers two primary hypermedia controls that can issue HTTP requests: anchors and forms...why not every element?</li>
+    <div>
+      < a > href="https://hypermedia.systems/" < / a >
+      <ul class="list-disc">
+        <li>Browser issues an HTTP request to the URL</li>
+        <li>Browser will load the HTML body of the HTTP response into the browser window, replaceing the current document</li>
+      </ul>
+    </div>
+    <li>Why should only click and submit trigger them?</li>
+    <li>Why should only GET be availabe for < a > and POST for < form >?</li>
+    <li>Why can you only replace the <i>entire screen</i>?</li>
+    <div style="text-align: center; margin-top: 40px">Removing these arbitrary constraints to make HTML itself more interactive is the core of what HTMX does.</div>
+  </ul>
 </div>

@@ -4,40 +4,10 @@
       <meta charset="UTF-8" />
       <title>HTMX</title>
       <script src="https://unpkg.com/htmx.org@1.9.6" integrity="sha384-FhXw7b6AlE/jyjlZH5iHa/tTe9EpJ1Y55RjcgPbjeWMskSxZt1v9qkxLJWNJaGni" crossorigin="anonymous"></script>  
+      <link rel="stylesheet" href="styles.css">
+      <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
   </head>
   <body style="background: black; color: rgb(158, 151, 255); font-size: 2rem;">
-    <style>
-      .smooth {
-        transition: all 1s ease-in
-      }
-      #spin {
-        display: none;
-      }
-      main {
-        background: rgb(22, 22, 77);
-        height: 82vh;
-        color: #fff;
-        padding: 5px;
-        margin: 10px;
-      }
-      h1 {
-        margin: 0
-      }
-      button {
-        height: 40px;
-        width: 150px;
-        border-radius: 10px;
-        background: rgb(22, 22, 77);
-        color: white;
-        cursor: pointer;
-        transition: filter ease-in-out 0.3s;
-        outline: none;
-        border: none;
-      }
-      button:hover {
-        filter: brightness(220%);
-      }
-    </style>
 
     <!-- hx-trigger="click[ctrlKey]" -->
     <!-- hx-trigger="every 5s" -->
@@ -48,11 +18,11 @@
 
 
     <h1 style="text-align: center;">Let's Talk About HTMX</h1>
-    <div style="margin-bottom:10px; display: flex">
-      <button hx-get="/get_content"  hx-vals='{"direction": "previous"}' hx-swap="innerHTML" hx-target="#content">
+    <div style="margin-bottom:10px; display: flex; padding: 10px">
+      <button class="btn" hx-get="/get_content"  hx-vals='{"direction": "previous"}' hx-swap="innerHTML" hx-target="#content">
         Previous Slide
       </button>
-      <button style="margin-left: auto" hx-get="/get_content" hx-vals='{"direction": "next"}' hx-swap="innerHTML" hx-target="#content">
+      <button class="btn" style="margin-left: auto" hx-get="/get_content" hx-vals='{"direction": "next"}' hx-swap="innerHTML" hx-target="#content">
         Next Slide
       </button>
     </div>
@@ -67,8 +37,5 @@
 
 
     <script src="https://unpkg.com/htmx.org/dist/htmx.js"></script>
-    <script>
-
-    </script>
   </body>
   </html>

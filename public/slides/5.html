@@ -1,3 +1,21 @@
-<div>
-  Hello 5
+<div style="padding: 0px 45px 45px 45px;">
+  <div style="text-align: left; font-size: 20px; margin-bottom: 50px; margin-left: -40px">
+    AJAX Demo
+  </div>
+  <div style="display: flex; justify-content: space-evenly; margin-top: 50px;">
+
+    <!-- get request to express server -->
+    <div style="display: flex; gap: 10px; flex-direction: column;">
+      <button class="btn" hx-get="/season">Get request to /season</button>
+      <ul class=" text-white text-opacity-0 hover:text-opacity-100 smooth list-disc">
+        <li>weird..., because:</li>
+        <li>Server sending an empty body back</li>
+        <li>Default behavior will replace itself (innerHTML)</li>
+        <li>We can specify a target instead</li>
+    </div>
+    <!-- get request to express server -->
+    <div style="display: flex; gap: 10px; flex-direction: column;">
+      <button class="btn" hx-get="/poll" hx-target="#pollContent">Start</button>
+      <div id="pollContent" class="content flex items-center justify-center" style="width: 80px; height: 80px"></div>
+  </div>
 </div>

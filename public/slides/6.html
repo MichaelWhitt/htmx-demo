@@ -1,3 +1,19 @@
-<div>
-  Hello 6
+<div style="padding: 0px 45px 45px 45px;">
+  <div style="text-align: left; font-size: 20px; margin-bottom: 50px; margin-left: -40px">
+    Target + Swap Demo
+  </div>
+  <div style="display: flex; justify-content: space-evenly; margin-top: 100px;">
+
+    <!-- innerHTML SWAP -->
+    <div style="display: flex; gap: 10px; flex-direction: column;">
+      <button class="btn" hx-get="/name" hx-target="#nameContent">Get Name</button>
+      <div id='nameContent' class="content">Replace inner html of this element</div>
+    </div>
+
+    <!-- outerHTML SWAP -->
+    <div style="display: flex; gap: 10px; flex-direction: column;">
+      <button class="btn" hx-get="/kiba" hx-target="#kibaContent" hx-swap="outerHTML">Get Kiba</button>
+      <div id='kibaContent' class="content">Replace entire element with Kiba</div>
+    </div>
+  </div>
 </div>

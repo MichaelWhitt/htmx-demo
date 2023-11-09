@@ -10,29 +10,38 @@ app.use(express.json())
 
 // Handle DELETE request at '/delete' endpoint
 app.delete('/delete', (req, res) => {
-    // Perform deletion logic here (remove element from the DOM)
-
-    // For example, you can send a success response back to the client
     res.status(200).send()
 })
 
-// app.get('/slides/1', (req, res) => {
-//   res.status(200).send('/slides/1')
-// })
+app.get('/season', (req, res) => {
+  console.log(res)
+  res.status(200).send()
+})
 
-let num = 0
-app.get("/slides", (req, res) => {
-  const v = Number(req.query.v)
-  console.log(num, v)
-  if (num <= 1 && v === -1) {
-    num = 0
-    res.sendFile(__dirname+`/public/slides/intro.html`)
-  } else {
-    console.log('here')
-    num += v
-    res.sendFile(__dirname+`/public/slides/${num}.html`)
-  } 
- })
+app.get('/poll', (req, res) => {
+  res.status(200).send('<div hx-trigger="every 1s" hx-get="/pollEvery"></div>')
+})
+
+app.get('/pollEvery', (req, res) => {
+  res.status(200).send(
+    `<div>${Math.ceil(Math.random() * 100)}</div>`
+  )
+})
+
+app.get('/name', (req, res) => {
+  res.status(200).send(
+    "<div style='color: cyan'>Michael</div>"
+  )
+})
+
+app.get('/kiba', (req, res) => {
+  res.status(200).send(
+    `<img src='/assets/kiba.jpg' width="420px" height="550px" style="border-radius: 10px; box-shadow: 0px 0px 12px 5px rgba(10,10,10,50)" />`
+  )
+})
+
+
+console.log(__dirname)
 
 const contentStack = ['intro.html', '1.html', '2.html', '3.html', '4.html', '5.html', '6.html', '7.html', '8.html', '9.html', '10.html']
 let currentIndex = 0
