@@ -49,10 +49,10 @@
 
     <h1 style="text-align: center;">Let's Talk About HTMX</h1>
     <div style="margin-bottom:10px; display: flex">
-      <button hx-get="/slides"  hx-vals='{"v": -1}' hx-swap="innerHTML" hx-target="#content">
+      <button hx-get="/get_content"  hx-vals='{"direction": "previous"}' hx-swap="innerHTML" hx-target="#content">
         Previous Slide
       </button>
-      <button style="margin-left: auto" hx-get="/slides" hx-vals='{"v": 1}' hx-swap="innerHTML" hx-target="#content">
+      <button style="margin-left: auto" hx-get="/get_content" hx-vals='{"direction": "next"}' hx-swap="innerHTML" hx-target="#content">
         Next Slide
       </button>
     </div>
