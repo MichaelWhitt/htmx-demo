@@ -13,12 +13,11 @@
         <li>Attach swap and target to HTML</li>
         <li>Create CSS Animation, with htmx-added class on old content</li>
         <li>Create server html, keep ID the same between old and new</li>
-        <li>or Transition API-> add transition: true to hx-swap</li>
         <li>No need for JS</li>
       </ul>
     </div>
     <div class="flex items-center gap-5 flex-col">
-      <button class="btn">Get Server Surprise</button>
+      <button class="btn" hx-get="/surprise">Get Server Surprise</button>
     </div>
   </div>
 </div>
