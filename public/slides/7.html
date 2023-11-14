@@ -1,21 +1,28 @@
 <div style="padding: 0px 45px 45px 45px;">
-  <div style="text-align: center; font-size: 50px; margin-bottom: 50px; margin-left: -40px">
-    Thanks for listening
+  <div style="font-size: 20px; margin-bottom: 50px; margin-left: -40px; display: flex">
+    <span>Animations</span>
+    <span class="ml-auto">7</span>
   </div>
-  <div>Resources: </div>
-  <ul>
-    <li>
-      <a href="https://htmx.org/docs" target="_blank">
-        HTMX Docs:
-        www.htmx.org/docs
-      </a>
-    </li>
-    <li>
-      <a href="https://www.builder.io/blog/htmx-vs-react" target="_blank">
-        Comparing HTMX to React:
-        https://www.builder.io/blog/htmx-vs-react
-      </a>
-    </li>
-    <li></li>
-  </ul>
+  <div class="mt-[500px] grid grid-cols-2">
+    <!--Basic animation with transition api: true inside hx-swap-->
+    <!--More complex animation with html + css-->
+    <!-- Animate -->
+    <div class="flex items-center gap-5 flex-col">
+      <div>How to animate in HTMX:</div>
+      <ul class="list-disc">
+        <li>Create CSS Animation, with htmx-added class on old content</li>
+        <li>Create server html, keep ID the same between old and new</li>
+        <li>Attach swap and target to HTML</li>
+        <li>Don't use JS</li>
+      </ul>
+    </div>
+    <div class="flex items-center gap-5 flex-col">
+      <button>Get Server Kiba</button>
+
+    </div>
+  </div>
 </div>
+
+<style>
+
+</style>

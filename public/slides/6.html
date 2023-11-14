@@ -1,8 +1,9 @@
 <div style="padding: 0px 45px 45px 45px;">
-  <div style="text-align: left; font-size: 20px; margin-bottom: 50px; margin-left: -40px">
-    Target + Swap Demo
+  <div style="font-size: 20px; margin-bottom: 50px; margin-left: -40px; display: flex">
+    <span>Target + Swap Demo</span>
+    <span class="ml-auto">6</span>
   </div>
-  <div class="grid grid-cols-3 mt-[500px] gap-5">
+  <div class="grid grid-cols-2 mt-[500px] gap-5">
 
     <!-- innerHTML SWAP -->
     <div style="display: flex; gap: 10px; flex-direction: column;">
@@ -12,7 +13,6 @@
       </div>
       <div id='nameContent' class="content w-full">Replace inner html of this element</div>
     </div>
-
 
 
     <!-- Delete Name + Async-->
@@ -26,12 +26,5 @@
         <img class="htmx-indicator ease-in-out" id="indicator" src="/assets/bars.svg" />
       </div>
     </div>
-
-    <!-- outerHTML SWAP -->
-    <div style="display: flex; gap: 10px; flex-direction: column;">
-      <button class="btn" hx-get="/kiba" hx-target="#kibaContent" hx-swap="outerHTML">Get Kiba</button>
-      <div id='kibaContent' class="content">Replace entire element with Kiba</div>
-    </div>
-
   </div>
 </div>

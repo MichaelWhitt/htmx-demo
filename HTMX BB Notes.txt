@@ -1,4 +1,4 @@
-In VSCode, open 6.html and server.js
+In VSCode, open 6.html and server.js, https://alpinejs.dev/
 
 ----------------------------------------------------------------------------What is HTMX 1.5 mins
 - The creator is carson gross, an old school developer. 

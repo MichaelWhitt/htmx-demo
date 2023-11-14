@@ -46,12 +46,9 @@ app.get('/loader', (req, res) => {
 
 app.get('/kiba', (req, res) => {
   res.status(200).send(
-    `<img src='/assets/kiba.jpg' width="420px" height="550px" style="border-radius: 10px; box-shadow: 0px 0px 12px 5px rgba(10,10,10,50)" />`
+    `<img id='kibaContent' src='/assets/kiba.jpg' width="420px" height="550px" style="border-radius: 10px; box-shadow: 0px 0px 12px 5px rgba(10,10,10,50)" />`
   )
 })
-
-
-console.log(__dirname)
 
 const contentStack = ['intro.html', '1.html', '2.html', '3.html', '4.html', '5.html', '6.html', '7.html', '8.html', '9.html', '10.html']
 let currentIndex = 0

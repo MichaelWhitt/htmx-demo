@@ -1,12 +1,13 @@
 <div style="padding: 0px 45px 45px 45px;">
-  <div style="text-align: left; font-size: 20px; margin-bottom: 50px; margin-left: -40px">
-    AJAX Demo
+  <div style="font-size: 20px; margin-bottom: 50px; margin-left: -40px; display: flex">
+    <span>AJAX Demo</span>
+    <span class="ml-auto">5</span>
   </div>
   <div style="display: flex; justify-content: space-evenly; margin-top: 50px;">
 
     <!-- get request to express server -->
     <div style="display: flex; gap: 10px; flex-direction: column;">
-      <button class="btn" hx-get="/season">Get request to /season</button>
+      <button class="btn" id="season" hx-get="/season">Get request to /season</button>
       <ul class=" text-white text-opacity-0 hover:text-opacity-100 smooth list-disc">
         <li>weird..., because:</li>
         <li>Server sending an empty body back</li>
@@ -19,3 +20,21 @@
       <div id="pollContent" class="content flex items-center justify-center" style="width: 80px; height: 80px"></div>
   </div>
 </div>
+
+<script>
+  // const tar = document.getElementById("pollContent")
+  // const conf = {attributes: true, childList: true, subtree: true}
+  // const cb = (mutationList, observer) => {
+  //   for (const mutation of mutationList) {
+  //     if (mutation.type === "childList") {
+  //       console.log("A child node has been added or removed.")
+  //     } else if (mutation.type === "attributes") {
+  //       console.log(`The ${mutation.attributeName} attribute was modified.`)
+  //     } else {
+  //       console.log({mutation})
+  //     }
+  //   }
+  // }
+  // const obs = new MutationObserver(cb)
+  // obs.observe(tar, conf)
+</script>
