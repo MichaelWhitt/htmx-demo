@@ -17,15 +17,26 @@
       </ul>
     </div>
     <div class="flex items-center gap-5 flex-col">
-      <button class="btn">Get Server Kiba</button>
+      <button class="btn">Get Server Surprise</button>
+      <div id="surprise" class="content">
+        Replace me
+      </div>
     </div>
   </div>
 </div>
 
 <style>
 
-  /* Old Content */
-
+  /* Old Content w/ htmx-added class*/
+  #surprise.htmx-added {
+   opacity: ''; 
+   transform: '';
+  }
   /* New Content w/ transition */
+  #surprise {
+   opacity: ''; 
+   transform: '';
+   transition: '';
+  }
 
 </style>

@@ -44,9 +44,9 @@ app.get('/loader', (req, res) => {
   }, 3000)
 })
 
-app.get('/kiba', (req, res) => {
+app.get('/surprise', (req, res) => {
   res.status(200).send(
-    `<img id='kibaContent' src='/assets/kiba.jpg' width="420px" height="550px" style="border-radius: 10px; box-shadow: 0px 0px 12px 5px rgba(10,10,10,50)" />`
+    `<img id='surprise' src='/assets/kiba.jpg' width="420px" height="550px" style="border-radius: 10px; box-shadow: 0px 0px 12px 5px rgba(10,10,10,50)" />`
   )
 })
 
