@@ -17,13 +17,15 @@ focus on extending HTML instead of those that extend JS
 - HTMX uses and manipulates HTML from the server instead of JSON, though
 JSON can still be used.
 ----------------------------------------------------------------------------Motivation for HTMX 2 min
-- In the world of neverending framework and library creation, with each seemingly more complex than the last, the creator wanted to try to reel in the complexity and make HTML relevant again
+- In the world of neverending framework and library creation, with each seemingly more complex than the last, the creator wanted to try to reel in the complexity 
+and make HTML relevant again
 - HTML only offers two primary hypermedia controls that issue HTTP requests to the server: anchor <a> tags and form tags. The creator asked why is this a thing?
 - Additionally, click and submit are the only ways to trigger these native controls... why? Why not allow other triggers like ctrl[click] or mouseenter to trigger these events?
 - A tags can only issue get requests and forms can only post... why not let the developer dictate the verbs they want to use?
 - His last main motivate was that when you issue a get using an a tag, the response body will simply replace the entire document. 
 - Why not let the developer decide where and what to replace? For example, choosing the inside of an element, the entire element, part of the screen etc?
-- This a tag for example will issue a get request to that url, and then the browser will load the HTML body of the HTTP response into the browser window, thereby replacing the entire current document
+- This a tag for example will issue a get request to that url, and then the browser will load the HTML body of the HTTP response into the browser window, 
+thereby replacing the entire current document
 
 Removing these constraints makes HTML much more interactive, and HTMX sets out to accomplish just that
 
@@ -40,12 +42,14 @@ Some of the cons would be the lack of some advanced features that React and othe
 - HTMX is relatively new, so updates may break the current version
 - Documenation could benefit from more examples and clarity
 - Community is growing but still small compared to React, Angular, Vue and the like
-- HTMX can greatly benefit from a client-side scripting library, like Alpinejs, which adds js functionality to html tags. Not necessary since you can still write normal JS but definitely can speed things up.
+- HTMX can greatly benefit from a client-side scripting library, like Alpinejs, which adds js functionality to html tags.
+ Not necessary since you can still write normal JS but definitely can speed things up.
 
 ----------------------------------------------------------------------------Main Features 1 | 1 min
 - Arguably the main feature of HTMX is this notion of "attribute driven interactivity", which comes in different forms
 - For ex, for AJAX functionality, you use hx-get then put in the url you want to hit. Same goes for the other http verbs.
-- You can choose when and how to trigger these requests, with the hx-trigger attribute. The default behavior is click, but there are many other options like mouseenter, load, every 5s, keyup etc
+- You can choose when and how to trigger these requests, with the hx-trigger attribute. 
+   The default behavior is click, but there are many other options like mouseenter, load, every 5s, keyup etc
 
 ----------------------------------------------------------------------------Main Features 2 | 1 min
 - hx-target is used to specify what element you want to receive the HTML from the server.
@@ -68,7 +72,8 @@ Some of the cons would be the lack of some advanced features that React and othe
 - Most of this logic is in the server which can reduce frontend complexity quite a bit, when the backend just sends what they want shown to the user.
 
 ----------------------------------------------------------------------------Target + Swap Demo 3.5 mins
-- The final demo page has a Get Name button that grabs my name from the server and places it inside the cyan box. 
+- In this demo we take a look at how targetting and swapping actually works.
+- We have a Get Name button that grabs my name from the server and places it inside the cyan box. 
 - [SWITCH TO VSCODE Server.js] to show app.get(/name)
 - We can see that when the frontend issues a get to /name, the server responds with actual html with some css. 
 - [SWITCH TO 6.html] to show line 10 (get name)
@@ -77,7 +82,8 @@ Some of the cons would be the lack of some advanced features that React and othe
 - Since we didn't specify hx-swap, it replaced the innerHTML of nameContent instead of the entire DOM element. [IN DOM] You can see that #nameContent div is still there.
 - However, the delete request swaps the outerHTML and responds with an empty body, thereby removing the entire nameContent element from the DOM
 - [CLICK DELETE NAME] + Show DOM being removed
-- Next I wanted to briefly show that HTMX supports a way to show the user the state of a request with hx-indicator. What you display of course is up to you, and here I chose a loading SVG. 
+- Next I wanted to briefly show that HTMX supports a way to show the user the state of a request with hx-indicator. What you display of course is up to you, 
+  and here I chose a loading SVG. 
 - [CLICK LOAD]
 - [SWITCH TO 6.html] to show line 22 and 26
 - We have an img which is hidden with the class htmx-indicator
@@ -87,9 +93,17 @@ Some of the cons would be the lack of some advanced features that React and othe
 - While the request is in progress, hx-indicator will tell the element specified to show itself. 
 - When done, the spinner is removed from the DOM while the container remains bc that is how I set it up, and inside the container received the content from the server. Pretty cool! 
 - This kind of reminds me a little of how outlets work in Remix.
-- This last one is similar but replaces the outerHTML, so we see the cyan box disappear and load an image from the server with styling attached.
-And it's an excuse to show my pup in the middle!
+
+----------------------------------------------------------------------------Animations 3.5 mins
+- For the last demo I wanted to briefly show how animations work in HTMX
+- They basically allow animations to take place without using Javascript as you'd expect
+- In order to set up animations, we need to:
+1. Create a target to receive content
+2. Attach swap and target
+3. Create the CSS animations, with htmx-added class on old content -> this basically tells htmx we are going to apply animations to this id
+4. Create server HTML, ensuring the ID is kept the same between old and new so HTMX knows what and where to swap
+5. Do this without the need to write any JS
 
 That's all! Here are a couple resources, and I will be sending David a gist.
 
-~13.5 minutes
+~15 minutes
