@@ -21,8 +21,8 @@ JSON can still be used.
 and make HTML relevant again
 - HTML only offers two primary hypermedia controls that issue HTTP requests to the server: anchor <a> tags and form tags. The creator asked why is this a thing?
 - Additionally, click and submit are the only ways to trigger these native controls... why? Why not allow other triggers like ctrl[click] or mouseenter to trigger these events?
-- A tags can only issue get requests and forms can only post... why not let the developer dictate the verbs they want to use?
-- His last main motivate was that when you issue a get using an a tag, the response body will simply replace the entire document.
+- a tags can only issue GET requests and forms can only POST... why not let the developer dictate the verbs they want to use?
+- His last main motivation was that when you issue a GET using an a tag, the response body will simply replace the entire document.
 - Why not let the developer decide where and what to replace? For example, choosing the inside of an element, the entire element, part of the screen etc?
 - This a tag for example will issue a get request to that url, and then the browser will load the HTML body of the HTTP response into the browser window,
 thereby replacing the entire current document
@@ -32,21 +32,22 @@ Removing these constraints makes HTML much more interactive, and HTMX sets out t
 ----------------------------------------------------------------------------Why choose HTMX? 2 min
 With all of this in mind, why choose HTMX?
 Here are some pros and cons:
-Some of the pros include the library being very small and easy to set up; just simply add a script to the head tag. The entire htmx library is a 3500 line js file.
+Some of the pros include the library is very small and easy to set up; just simply add a script to the head tag. The entire htmx library is a 3500 line js file.
 Coincidentally if you contribute to HTMX, the only file you work on is that htmx.js file.
-- Learning curve is not as steep as it is with React
+- The learning curve is not as steep as it is with React
 - HTMX can be integrated with any backend language and frontend framework, giving devs the agency required to choose the best kit for the task at hand
 - HTMX boasts fast load times, which is optimal for users on slow connections or dying phones
-- Open source and only javascript, which could lead to a long life
-Some of the cons would be the lack of some advanced features that React and other frameworks ship stock
-- HTMX is relatively new, so updates may break the current version
+- It's also Open source and only javascript, which could lead to a long life
+Some of the cons would be the lack of some advanced features that React and other frameworks ship out of the box
+- HTMX is relatively new, so updates may break the current version, causing more work for devs currently using it
 - Documenation could benefit from more examples and clarity
 - Community is growing but still small compared to React, Angular, Vue and the like
 - HTMX can greatly benefit from a client-side scripting library, like Alpinejs, which adds js functionality to html tags.
  Not necessary since you can still write normal JS but definitely can speed things up.
+ For example, you can see here that x-effect works a lot like useEffect in React
 
 ----------------------------------------------------------------------------Main Features 1 | 1 min
-- Arguably the main feature of HTMX is this notion of "attribute driven interactivity", which comes in different forms
+- Arguably the main idea of HTMX is this notion of "attribute driven interactivity", which comes in different forms
 - For ex, for AJAX functionality, you use hx-get then put in the url you want to hit. Same goes for the other http verbs.
 - You can choose when and how to trigger these requests, with the hx-trigger attribute.
    The default behavior is click, but there are many other options like mouseenter, load, every 5s, keyup etc
@@ -55,8 +56,8 @@ Some of the cons would be the lack of some advanced features that React and othe
 - hx-target is used to specify what element you want to receive the HTML from the server.
 - There are many ways to choose the target, but probably the most common way is with the id css selector (pound sign)
 - A really cool attribute is hx-swap, which let's you determine how the target receives the HTML
-- For example, the default way is innerHTML, which leaves the parent untouched and just replaces the content
-- But you can also replace the entire element with outerHTML or choose none to replace nothing
+- For example, the default way is innerHTML, which leaves the parent untouched and just replaces the inner content
+- But you can also replace the entire element with outerHTML or choose none to replace nothing, and more
 
 ----------------------------------------------------------------------------AJAX Demo | 2.5 mins
 - Now I want to show a brief demo of HTMX to show you how it works in practice using an express server that returns HTML
@@ -67,7 +68,7 @@ Some of the cons would be the lack of some advanced features that React and othe
 - on Click, we can see that the button text simply disappears.... weird... but why?
 - It's because while the server responded with a 200, we returned an empty body, so that empty body was placed inside the button as the content, which we can see here in the DOM
 - The default behavior of a get request is to replace the innerHTML of itself, which doesn't make must sense in this case but it I'm sure it has it's use cases.
-- On the right side I have a start button which issues a request to the backend, and replaces the content inside the cyan borders with the html on server.
+- On the right side I have a start button which issues a GET request to the backend, and replaces the content inside the cyan borders with the html on server.
 - The HTML that gets injected into the DOM has a hx-get as well to another endpoint, that generates a random number every second. Which is pretty cool!
 - Most of this logic is in the server which can reduce frontend complexity quite a bit, when the backend just sends what they want shown to the user.
 
@@ -76,13 +77,13 @@ Some of the cons would be the lack of some advanced features that React and othe
 - We have a Get Name button that grabs my name from the server and places it inside the cyan box.
 - [SWITCH TO VSCODE Server.js] to show app.get(/name)
 - We can see that when the frontend issues a get to /name, the server responds with actual html with some css.
-- [SWITCH TO 6.html] to show line 10 (get name)
+- [SWITCH TO 6.html] to show line 11 (get name)
 - Here in the frontend, we can see the button issues a get to /name, and targets the element with #nameContent.
 - [CLICK GET NAME]
 - Since we didn't specify hx-swap, it replaced the innerHTML of nameContent instead of the entire DOM element. [IN DOM] You can see that #nameContent div is still there.
 - However, the delete request swaps the outerHTML and responds with an empty body, thereby removing the entire nameContent element from the DOM
 - [CLICK DELETE NAME] + Show DOM being removed
-- Next I wanted to briefly show that HTMX supports a way to show the user the state of a request with hx-indicator. What you display of course is up to you,
+- Next I wanted to briefly show that HTMX supports a way to indicate to the user the state of a request with hx-indicator. What you display of course is up to you,
   and here I chose a loading SVG.
 - [CLICK LOAD]
 - [SWITCH TO 6.html] to show line 22 and 26
