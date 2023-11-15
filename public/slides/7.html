@@ -10,6 +10,7 @@
     <div class="flex items-center gap-5 flex-col">
       <div>How to animate in HTMX:</div>
       <ul class="list-disc">
+        <li>Create a target to receive content</li>
         <li>Attach swap and target to HTML</li>
         <li>Create CSS Animation, with htmx-added class on old content</li>
         <li>Create server html, keep ID the same between old and new</li>
@@ -17,10 +18,7 @@
       </ul>
     </div>
     <div class="flex items-center gap-5 flex-col">
-      <button class="btn" hx-get="/surprise" hx-target="#surprise" hx-swap="outerHTML">Get Server Surprise</button>
-      <div id="surprise" class="content">
-        replace me
-      </div>
+      <button class="btn" hx-get="/surprise">Get Server Surprise</button>
     </div>
   </div>
 </div>
@@ -29,14 +27,14 @@
 
   /* Old Content w/ htmx-added class*/
   #surprise.htmx-added {
-   opacity: 0; 
-   transform: translateX(-100%);
+   opacity: '';
+   transform: '';
   }
   /* New Content w/ transition */
   #surprise {
-   opacity: 1; 
-   transform: translateX(0);
-   transition: transform 0.3s ease, opacity 0.3s ease;
+   opacity: '';
+   transform: '';
+   transition: '';
   }
 
 </style>
