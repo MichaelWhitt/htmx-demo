@@ -1,12 +1,12 @@
 In VSCode, open 6.html and server.js, https://alpinejs.dev/
 
 ----------------------------------------------------------------------------What is HTMX 1.5 mins
+- It is a very small dependency free javascript library. CG coined it
+as a library that completes HTML.
 - The creator is carson gross, an old school developer.
 He has created a few other projects but a notable one might be
 intercooler.js, which is the predecessor to HTMX.
 - HTMX version one released late 2020.
-- It is a very small dependency free javascript library. CG coined it
-as a library that completes HTML.
 - HTMX enables developers to access modern browser features directly
 from HTML instead of having to use JS
 - It gives you access to AJAX, CSS animations, WebSockets, Server Sent Events, and more using only HTML attributes
@@ -92,7 +92,8 @@ Some of the cons would be the lack of some advanced features that React and othe
 - hx-get hits the loader endpoint and gives us back the content we want
 - in the /loader server logic we are setting a timeout to deliver the content in 3 seconds
 - While the request is in progress, hx-indicator will tell the element specified to show itself.
-- When done, the spinner is removed from the DOM while the container remains bc that is how I set it up, and inside the container received the content from the server. Pretty cool!
+- When done, the spinner is removed from the DOM while the container remains bc that is how I set it up, and the inside of the container received the content from the server. 
+Pretty cool!
 - This kind of reminds me a little of how outlets work in Remix.
 
 ----------------------------------------------------------------------------Animations 3.5 mins
