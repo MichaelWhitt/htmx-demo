@@ -17,7 +17,10 @@
       </ul>
     </div>
     <div class="flex items-center gap-5 flex-col">
-      <button class="btn" hx-get="/surprise">Get Server Surprise</button>
+      <button class="btn" hx-get="/surprise" hx-target="#surprise" hx-swap="outerHTML">Get Server Surprise</button>
+      <div id="surprise" class="content">
+        replace me
+      </div>
     </div>
   </div>
 </div>
@@ -26,14 +29,14 @@
 
   /* Old Content w/ htmx-added class*/
   #surprise.htmx-added {
-   opacity: ''; 
-   transform: '';
+   opacity: 0; 
+   transform: translateX(-100%);
   }
   /* New Content w/ transition */
   #surprise {
-   opacity: ''; 
-   transform: '';
-   transition: '';
+   opacity: 1; 
+   transform: translateX(0);
+   transition: transform 0.3s ease, opacity 0.3s ease;
   }
 
 </style>

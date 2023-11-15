@@ -103,6 +103,7 @@ Some of the cons would be the lack of some advanced features that React and othe
 3. Create the CSS animations, with htmx-added class on old content -> this basically tells htmx we are going to apply animations to this id
 4. Create server HTML, ensuring the ID is kept the same between old and new so HTMX knows what and where to swap
 5. Do this without the need to write any JS
+6. REFRESH PAGE BEFORE ANIMATION
 
 That's all! Here are a couple resources, and I will be sending David a gist.
 
