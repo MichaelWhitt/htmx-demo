@@ -1,12 +1,12 @@
 In VSCode, open 6.html and server.js, https://alpinejs.dev/
 
 ----------------------------------------------------------------------------What is HTMX 1.5 mins
+- It is a very small dependency free javascript library. CG coined it
+as a library that completes HTML.
 - The creator is carson gross, an old school developer.
 He has created a few other projects but a notable one might be
 intercooler.js, which is the predecessor to HTMX.
 - HTMX version one released late 2020.
-- It is a very small dependency free javascript library. CG coined it
-as a library that completes HTML.
 - HTMX enables developers to access modern browser features directly
 from HTML instead of having to use JS
 - It gives you access to AJAX, CSS animations, WebSockets, Server Sent Events, and more using only HTML attributes
